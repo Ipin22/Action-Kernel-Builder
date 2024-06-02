@@ -3,7 +3,7 @@
 set -e -x
 
 # Kernel Source
-KERNEL_SOURCE="https://github.com/VIOLET-EVERGARDE/OP4BFB"
+KERNEL_SOURCE="https://github.com/VIOLET-EVERGARDE/CPH2083"
 KERNEL_BRANCH="main"
 KERNEL_DEFCONFIG="oppo6765_19451_defconfig"
 
