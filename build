@@ -3,9 +3,9 @@
 set -e -x
 
 # Kernel Source
-KERNEL_SOURCE="https://github.com/VIOLET-EVERGARDE/CPH2083"
+KERNEL_SOURCE="https://github.com/VIOLET-EVERGARDE/kernel_not_stable_CPH2083"
 KERNEL_BRANCH="main"
-KERNEL_DEFCONFIG="oppo6765_19451_defconfig"
+KERNEL_DEFCONFIG="CPH2083_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
 CLANG_URL="https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master-kernel-build-2021/clang-r416183b.tar.gz"
