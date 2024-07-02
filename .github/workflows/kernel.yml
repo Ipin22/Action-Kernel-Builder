@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       DEVICE_NAME:
-        description: 'full_oppo6765_19451'
+        description: 'zip name'
         required: true
         default: ''
       ANDROID_VERSION:
@@ -15,7 +15,7 @@ on:
         options:
         - t-oss
         - s-oss
-        - r-oss
+        - p-oss
         - q-oss
 
 permissions:
@@ -53,7 +53,7 @@ jobs:
       uses: ncipollo/release-action@v1.12.0
       with:
         artifacts: |
-          /home/runner/work/myKernel/out/arch/arm64/boot*.zip
+          /home/runner/work/myKernel/out/arch/arm64/boot/dts/mediatek/*.zip
           /home/runner/work/myKernel/build.log
         name: Compiled Kernel for ${{ github.event.inputs.DEVICE_NAME }} - ${{ steps.props.outputs.date }}
         draft: false
