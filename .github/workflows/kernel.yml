@@ -35,7 +35,6 @@ jobs:
 
     - name: Start Building Kernel
       run: |
-        cmake ../ -DBUILD_GRAPHICAL_EXAMPLES=FALSE
         export KBUILD_BUILD_USER="${{ github.actor }}"
         export KBUILD_BUILD_HOST="${{ github.event.inputs.DEVICE_NAME }}"
         ./build
