@@ -37,6 +37,7 @@ jobs:
       run: |
         export KBUILD_BUILD_USER="${{ github.actor }}"
         export KBUILD_BUILD_HOST="${{ github.event.inputs.DEVICE_NAME }}"
+        git submodule update --init --recurse
         ./build
 
     - name: Set Properties
