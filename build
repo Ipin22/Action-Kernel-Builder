@@ -3,8 +3,8 @@
 set -e -x
 
 # Kernel Source
-KERNEL_SOURCE="https://github.com/ARIPIN897/kernel_test"
-KERNEL_BRANCH="test"
+KERNEL_SOURCE="https://github.com/ARIPIN897/kernel_oppo_OP4BFB"
+KERNEL_BRANCH="android-9.0"
 KERNEL_DEFCONFIG="oppo6765_19451_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
