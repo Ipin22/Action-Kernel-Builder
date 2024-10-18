@@ -3,8 +3,8 @@
 set -e -x
 
 # Kernel Source
-KERNEL_SOURCE="https://github.com/KAGA-KOKO/android_kernel_OP4BFB"
-KERNEL_BRANCH="slight-changes"
+KERNEL_SOURCE="https://github.com/ARIPIN897/android-kernel-oppo6765"
+KERNEL_BRANCH="ANDROID-9.0"
 KERNEL_DEFCONFIG="bujet_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
