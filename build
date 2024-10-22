@@ -4,11 +4,11 @@ set -e -x
 
 # Kernel Source
 KERNEL_SOURCE="https://github.com/ARIPIN897/android-kernel-oppo6765"
-KERNEL_BRANCH="stable"
+KERNEL_BRANCH="upstream"
 KERNEL_DEFCONFIG="oppoa12_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
-CLANG_URL="https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/a59d17df840d203e477534a3312b36e2310712d0/clang-r346389c.tar.gz"
+CLANG_URL="https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-9.0.0_r3/clang-4691093.tar.gz"
 
 # Prebuilt GCC Utilities (AOSP)
 GCC_x64="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9"
