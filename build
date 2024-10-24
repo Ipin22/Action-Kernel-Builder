@@ -3,8 +3,8 @@
 set -e -x
 
 # Kernel Source
-KERNEL_SOURCE="https://github.com/Ipin22/any-issue"
-KERNEL_BRANCH="initial"
+KERNEL_SOURCE="https://github.com/Ipin22/rebase"
+KERNEL_BRANCH="stock"
 KERNEL_DEFCONFIG="oppo6765_19451_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
