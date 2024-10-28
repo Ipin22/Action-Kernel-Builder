@@ -4,7 +4,7 @@ set -e -x
 
 # Kernel Source
 KERNEL_SOURCE="https://github.com/Ipin22/kt_test"
-KERNEL_BRANCH="custom"
+KERNEL_BRANCH="upstream"
 KERNEL_DEFCONFIG="ipin_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
