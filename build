@@ -3,9 +3,9 @@
 set -e -x
 
 # Kernel Source
-KERNEL_SOURCE="https://github.com/ARIPIN897/android-kernel-oppo6765"
-KERNEL_BRANCH="upstream"
-KERNEL_DEFCONFIG="oppoa12_defconfig"
+KERNEL_SOURCE="https://github.com/ARIPIN897/A12"
+KERNEL_BRANCH="master"
+KERNEL_DEFCONFIG="CPH2083_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
 CLANG_URL="https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-9.0.0_r3/clang-4691093.tar.gz"
