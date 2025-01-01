@@ -8,7 +8,7 @@ KERNEL_BRANCH="master"
 KERNEL_DEFCONFIG="CPH2083_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
-CLANG_URL="https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-9.0.0_r3/clang-4691093.tar.gz"
+CLANG_URL="https://publishing-ie-linaro-org.s3.amazonaws.com/releases/components/toolchain/binaries/6.3-2017.02/aarch64-linux-gnu/gcc-linaro-6.3.1-2017.02-x86_64_aarch64-linux-gnu.tar.xz?Signature=35UrW87iwd9cOKkHScKjWgJ%2FZNA%3D&Expires=1735753707&AWSAccessKeyId=AKIAIELXV2RYNAHFUP7A"
 
 # Prebuilt GCC Utilities (AOSP)
 GCC_x64="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9"
