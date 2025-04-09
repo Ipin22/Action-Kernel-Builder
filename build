@@ -4,7 +4,7 @@ set -e -x
 
 # Kernel Source
 KERNEL_SOURCE="https://github.com/KAGA-KOKO/kernel_fw-a31-a13"
-KERNEL_BRANCH="stock"
+KERNEL_BRANCH="ksu"
 KERNEL_DEFCONFIG="oppo6765_19451_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
@@ -47,7 +47,7 @@ PATH="${WORK}/clang/bin:${WORK}/x64/bin:${WORK}/x32/bin:/bin"
 cd "${KERNEL_SRC}" || exit 1
 
 # KernelSU - Disable if not building one.
-# curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
 
 # Start Compiling Kernel
 make_fun "${KERNEL_DEFCONFIG}"
