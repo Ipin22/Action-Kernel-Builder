@@ -4,7 +4,7 @@ set -e -x
 
 # Kernel Source
 KERNEL_SOURCE="https://github.com/KAGA-KOKO/kernel_fw-a31-a13"
-KERNEL_BRANCH="test-upstream"
+KERNEL_BRANCH="patch-upstream"
 KERNEL_DEFCONFIG="oppo6765_19451_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
