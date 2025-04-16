@@ -4,8 +4,8 @@ set -e -x
 
 # Kernel Source
 KERNEL_SOURCE="https://github.com/KAGA-KOKO/kernel_fw-a31-a13"
-KERNEL_BRANCH="oss_non-ksu"
-KERNEL_DEFCONFIG="oppo6765_19451_defconfig"
+KERNEL_BRANCH="main"
+KERNEL_DEFCONFIG="rumput_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
 CLANG_URL="https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-9.0.0_r3/clang-4691093.tar.gz"
