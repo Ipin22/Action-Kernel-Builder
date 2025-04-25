@@ -8,7 +8,7 @@ KERNEL_BRANCH="kaga-oss"
 KERNEL_DEFCONFIG="oss_defconfig"
 
 # Prebuilt Clang Toolchain (AOSP)
-CLANG_URL="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/refs/heads/android-9.0.0_r3.tar.gz"
+CLANG_URL="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/961622e926a1b21382dba4dd9fe0e5fb3ee5ab7c.tar.gz"
 # Prebuilt GCC Utilities (AOSP)
 GCC_x64="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9"
 GCC_x32="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9"
