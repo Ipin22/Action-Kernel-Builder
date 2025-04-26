@@ -14,6 +14,10 @@ GCC_x64="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch
 GCC_x32="https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9"
 GCC_BRANCH="android-9.0.0_r3"
 
+# Telegram Bot Token and Chat ID from GitHub Secrets
+BOT_TOKEN="${BOT_TOKEN}"
+CHAT_ID="${CHAT_ID}"
+
 # Setup make Command
 make_fun() {
 	make O=out ARCH=arm64 CC=clang HOSTCC=clang DTC=dtc \
@@ -40,15 +44,50 @@ if [ ! -d clang ]; then mkdir clang && curl -Lsq "${CLANG_URL}" -o clang.tgz && 
 [ ! -d x32 ] && git clone --depth=1 "${GCC_x32}" -b "${GCC_BRANCH}" ./x32
 [ ! -d "${KERNEL}" ] && git clone --depth=1 "${KERNEL_SOURCE}" -b "${KERNEL_BRANCH}" "${KERNEL}"
 
+# Download AnyKernel3 if not exists
+if [ ! -d "AnyKernel3" ]; then
+	git clone --depth=1 https://github.com/osm0sis/AnyKernel3.git
+fi
+
 # Setting Toolchain Path
-PATH="${WORK}/clang/bin:${WORK}/x64/bin:${WORK}/x32/bin:/bin"
+export PATH="${WORK}/clang/bin:${WORK}/x64/bin:${WORK}/x32/bin:${PATH}"
 
 # Enter Kernel root directory
 cd "${KERNEL_SRC}" || exit 1
 
-# KernelSU - Disable if not building one.
-# curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
+# Clean source
+make_fun mrproper
 
 # Start Compiling Kernel
 make_fun "${KERNEL_DEFCONFIG}"
 make_fun -j"$(nproc --all)" 2>&1 | tee build.log 
+
+# After build, if success, prepare AnyKernel3 zip
+if [ -f out/arch/arm64/boot/Image.gz-dtb ]; then
+	echo "Kernel compiled successfully!"
+
+	# Copy Image.gz-dtb into AnyKernel3
+	cp out/arch/arm64/boot/Image.gz-dtb ../AnyKernel3/
+
+	cd ../AnyKernel3 || exit 1
+
+	# Custom edit anykernel.sh
+	sed -i 's|^kernel.string=.*|kernel.string=KAGA-KOKO DESU|' anykernel.sh
+	sed -i 's|^device.name1=.*|device.name1=OP4BFB|' anykernel.sh
+	sed -i 's|^device.name2=.*|device.name2=CPH2083|' anykernel.sh
+	sed -i 's|^block=.*|block=/dev/block/platform/bootdevice/by-name/boot;|' anykernel.sh
+	sed -i 's|^is_slot_device=.*|is_slot_device=1;|' anykernel.sh
+
+	# Pack the flashable zip
+	ZIPNAME="KERNEL-$(date +%Y%m%d-%H%M).zip"
+	zip -r9 "${ZIPNAME}" * -x "*.git*" README.md *zip
+
+	echo "Flashable zip created: ${ZIPNAME}"
+
+	# Post the zip file to Telegram
+	curl -F "chat_id=${CHAT_ID}" -F document=@"${ZIPNAME}" -F caption="Kernel build completed successfully." "https://api.telegram.org/bot${BOT_TOKEN}/sendDocument"
+
+else
+	echo "Build failed: Image.gz-dtb not found!"
+	exit 1
+fi
