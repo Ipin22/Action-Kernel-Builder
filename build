@@ -3,7 +3,7 @@
 set -e -x
 
 # Kernel Source
-KERNEL_SOURCE="https://github.com/ipin22/Experimnet"
+KERNEL_SOURCE="https://github.com/ipin22/Experiment"
 KERNEL_BRANCH="main"
 KERNEL_DEFCONFIG="CPH2083_defconfig"
 
